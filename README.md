@@ -55,7 +55,7 @@ Class: dict2obj(dict)
 -> function: _init_ 
 
 ### comp_infarcted_volume.py
-Description: 
+>Description: 
 
 ### finite_element_fcts.py
 | Function | Input | Output | Description | 
@@ -67,14 +67,14 @@ Description:
 | solve_lin_sys | Vp, LHs, RHS, BCs, lin_solver, precond, rtcol, mon_cinv, init_sol | p | |
 
 ### infarct_calulation.py
-Description: ....
+>Description: ....
 
 ### param_mapping_runner.py
-Description: ...
+>Description: ...
 ### perfusion_parameter_sampling.py
-Description: ...
+>Description: ...
 ### plot_sensitivity_results.py
-Description: ...
+>Description: ...
 ### suppl_fcts.py
 | Function | Input | Output | Description | 
 |----------|----------|----------|----------|
