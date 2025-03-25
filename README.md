@@ -4,7 +4,7 @@
 
 ```mermaid
 flowchart LR
-    n71["Gemini"] --> n72["perfusion"] & n73["perfusion"] & n74["oxygen"] & n75@{ label: "sensitivity" } & n82["tissue_health"] & n81(["API.py"])
+    n71["Gemini"] --> n72["perfusion"] & n73["perfusion"] & n74["oxygen"] & n75["sensitivity"] & n82["tissue_health"] & n81(["API.py"])
     n71 --> n83(["API.py"])
 
     n72@{ shape: rect}
@@ -23,3 +23,55 @@ flowchart LR
 <!--
 https://www.mermaidchart.com/play#pako:eNqNjlFLwzAQx79KiDAcuLEurcv6IIpSEXwQX41sXb3aYExKk22W0e_uBWlhs4PmXnK_-3H_O9DMfACNaa7MPivSypHnV6EJPr0I3gR9hG-ppaDvZDK5QTZHVkKVb6002uMRQobQ_NSf0JEQiQVtpZM76eoWR7cHotINqJgI6qS1W1ivCkiVKwQljXd4XwIPLpHevTxNS79r3F34dxVnp-NWmGOgLdISYlJB5pqWszM8PMOjfs7791tXK_Dp-KvMF8QXSfJwPZtd5VIp3yTL-_BYZcPVcLgaDVb58Ft50KmLyNfxlP2b-qLNL1lYu_0
 -->
+
+## Sensitivity 
+### Overview
+- [IO_fcts.py](### IO_fcts.py): ...
+- clear.sh
+- [comp_infearcted_volume.py](### comp_infarcted_volume.py): ...
+- [finite_element_fcts.py](### finite_element_fcts.py): ...
+- [infarct_calculation.py](### infarct_calulation.py): ...
+- [param_mapping_runner.py](### param_mapping_runner.py): ...
+- [perfusion_parameter_sampling.py](### perfusion_parameter_sampling.py): ...
+- [plot_sensitivity_results.py](### plot_sensitivity_results.py): ...
+- sensitivity.sh
+- [suppl_fcts.py](### suppl_fcts.py): ...
+### IO_fcts.py
+|Function|Input | Output | Description | 
+|----------|----------|----------|----------|
+| mesh_reader    | mesh_file   | mesh, subdomains, boundaries   | This function is useful for loading mesh data and its regions in parallel computing environments |
+| argument_reader    | parser   | parser   | This function is part of a script that processes command-line arguments |
+| perm_init_config_reader    | input_file_path   | mesh_file, e_ref, K1_form, res_fldr, save_subres   | |
+| basic_flow_config_reader | input_file_path | mesh_file, read_inlet_boundary, inlet_boudary_file, inlet_BC_type, permeability_folder, p_arterial, p_venous, K1gm_ref, K2gm_ref, K3gm_ref, gmowm_perm_rat, beat12gm, betagm, gmowm_beta_rat, fe_degr, res_fldr, save_pvd, comp_ave | |
+| basic_flow_config_reader2 | input_file_path, parser | configs | |
+| input_file_reader | input_file_path | mesh_file, p_arterial, p_venous, e_ref, K1_ref, K2_ref, K3_ref, beta, fe_degr, res_fldr, pial_surf_file, inflow_file | |
+| inlet_file_reader | inlet_boundary_file | boundary_data | |
+| initialise_permeabilities | K1_space, K2_space, mesh, permeability_folder | K1, K2,K1.copy(deepcopy=True) | |
+| pvd_saver | variable, folder, name | | |
+| hdf5_saver | mesh, variable, folder, file_name, variable_name | | |
+| hdf5_reader | mesh, variable, folder, file_name, variable_name | | |
+
+Class: dict2obj(dict) 
+-> function: _init_ 
+
+### comp_infarcted_volume.py
+Description: 
+
+### finite_element_fcts.py
+| Function | Input | Output | Description | 
+|----------|----------|----------|----------|
+| mesh_reader | mesh_file | mesh, subdomains, boundaries | |
+|alloc_fct_spaces | mesh, fe_f=degr | Vp, Vvel, v_1, v_2, v_3, p, p_1, p_2,p_3, K1_space, K2_space ||
+|set_up_fe_solver | mesh, V, v_1, v_2, v_3, p, p_1, p_2, p_3, K1, K2, K3, beta12, beta13, beat 21, beta23, beta31, beta 32, boundaries, pa, pv, subdomains, inflow,_file | LHS, RHS, sigma1, sigma2, sigma3, b1, b2, b3, arteriolesboundnary, venulesboundary, boundaryids | |
+| set_up_fe_solver2 | mesh, subdomains, boundaries, V, v_1, v_2, v_3, p, p_1, p_2, p_3, K1, K2, K3, beta12, beta23, pa, pv, read_inlet_boundary, inlet_boundary_file, inlet_BC_type | LHS, RHS, sigma1, sigma2, sigma3, BCs | |
+| solve_lin_sys | Vp, LHs, RHS, BCs, lin_solver, precond, rtcol, mon_cinv, init_sol | p | |
+
+### infarct_calulation.py
+
+### param_mapping_runner.py
+
+### perfusion_parameter_sampling.py
+
+### plot_sensitivity_results.py
+
+### suppl_fcts.py
