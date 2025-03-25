@@ -67,11 +67,26 @@ Description:
 | solve_lin_sys | Vp, LHs, RHS, BCs, lin_solver, precond, rtcol, mon_cinv, init_sol | p | |
 
 ### infarct_calulation.py
+Description: ....
 
 ### param_mapping_runner.py
-
+Description: ...
 ### perfusion_parameter_sampling.py
-
+Description: ...
 ### plot_sensitivity_results.py
-
+Description: ...
 ### suppl_fcts.py
+| Function | Input | Output | Description | 
+|----------|----------|----------|----------|
+| set_coupling_coeff | beta | beta12, beta13, beta21, beta23, beta31, beta32 | |
+| comp_vessel_orientation| subdomains, boundaries, mesh, res_fldr, save_subres | e, main_direction | |
+| perm_tens_comp | K_space, subdomains, mesh, e_ref, e_loc, K1_form | K1 | |
+| scale_permeabilities | subdomains, K1, K2, K3, K1_ref_gm, K2_ref_gm, K2_km_ref_gm, gmowm_prem_rat, res_fldr, save_pvd | K1, K2, K3 | |
+| scale_coupling_coefficients | subdomains, beta12gm, beta23gm, gmowm_beta_rat, K2_space, res_fldr, save_pvd | beta12, beta23 | |
+| comp_transf_mat| e0, e1 | T | |
+| perm_tens_comp_old | K_space, subdomains, mesh, e0, K1_ref, K2_ref, K3_ref, pial_surf_file | K1, K2, K3 | |
+| surface_ave | mesh, boundaries, vels, ps | np.array(fluxes), np.array(surf_p_values) | |
+| infarct_vol | mesh, subdomains, infarct | np.array(vol_p_values) | |
+| perfusion_vol | mesh, subdomains, perfusion | np.array(vol_p_values) | |
+| vol_ave | mesh, subdomains, ps, vels | np.array(vol_p_values), np.array(vol_vel_values) | |
+| region_label_assembler | region | reion_labels, n_labels | |
