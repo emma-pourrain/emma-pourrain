@@ -41,8 +41,8 @@ https://www.mermaidchart.com/play#pako:eNqNjlFLwzAQx79KiDAcuLEurcv6IIpSEXwQX41sX
 |----------|----------|----------|----------|
 | mesh_reader    | mesh_file   | mesh, subdomains, boundaries   | This function is useful for loading mesh data and its regions in parallel computing environments |
 | argument_reader    | parser   | parser   | This function is part of a script that processes command-line arguments |
-| perm_init_config_reader    | input_file_path   | mesh_file, e_ref, K1_form, res_fldr, save_subres   | |
-| basic_flow_config_reader | input_file_path | mesh_file, read_inlet_boundary, inlet_boudary_file, inlet_BC_type, permeability_folder, p_arterial, p_venous, K1gm_ref, K2gm_ref, K3gm_ref, gmowm_perm_rat, beat12gm, betagm, gmowm_beta_rat, fe_degr, res_fldr, save_pvd, comp_ave | |
+| perm_init_config_reader    | input_file_path   | mesh_file, e_ref, K1_form, res_fldr, save_subres | This function is designed to read and parse an XML configuration file related to permeability initialisation in a finite element simulation. (extract input parameters, ensure numerical data correctly formatted) |
+| basic_flow_config_reader | input_file_path | mesh_file, read_inlet_boundary, inlet_boudary_file, inlet_BC_type, permeability_folder, p_arterial, p_venous, K1gm_ref, K2gm_ref, K3gm_ref, gmowm_perm_rat, beat12gm, betagm, gmowm_beta_rat, fe_degr, res_fldr, save_pvd, comp_ave |  |
 | basic_flow_config_reader2 | input_file_path, parser | configs | |
 | input_file_reader | input_file_path | mesh_file, p_arterial, p_venous, e_ref, K1_ref, K2_ref, K3_ref, beta, fe_degr, res_fldr, pial_surf_file, inflow_file | |
 | inlet_file_reader | inlet_boundary_file | boundary_data | |
