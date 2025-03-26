@@ -33,9 +33,15 @@ https://www.mermaidchart.com/play#pako:eNqNjlFLwzAQx79KiDAcuLEurcv6IIpSEXwQX41sX
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
+- [Structure](#structure)
 - [Contribution](#contribution)
-- [License)[#license)
+- [License](#license)
 
+## Installation
+To install this project, run the following command
+Provide examples of how to install and use the project 
+
+## Structure 
 
 ## Sensitivity 
 ### Overview
