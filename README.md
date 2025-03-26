@@ -1,6 +1,12 @@
-# Chart
+# Biomedicalfluid dynamics with a particular focus on cerebral blood flow - Gemini code
+Here is a brief description of the project 
 
+The following is a useful reference document for users of the code in project Gemini. This is a project looking to model the various scenarios of acute ischaemic stroke in a virtual population of patients, with the overarching goal of running an ’in silico’ or ’virtual’ clinical trial, which will be eventually accessible to medical professionals.
+The primary solution strategy is the finite element method. The open source software FEniCSx is used as a convenient and effective finite element solver for the partial differential equations modelling acute ischaemic stroke. At time of writing the latest version of FEniCSx is from October 2024, that is FEniCSx (0.9). FEniCSx is an evolution of the previous version FEniCS Legacy - this document will describe some aspects of this translation. FEniCSx is comprised of the libraries UFL, Basix, FFCx, and DOLFINx, which are also available on Github. Some improvements on the legacy version include a wide range of available cell types and elements, memory parallelisation, and complex number support.
+
+This repository contains software corresponding to WP5 of the INSIST project (https://www.insist-h2020.eu/).
 ## Overview
+This section should provude a high-level overview of the project's purpose and goals
 
 ```mermaid
 flowchart LR
@@ -23,6 +29,13 @@ flowchart LR
 <!--
 https://www.mermaidchart.com/play#pako:eNqNjlFLwzAQx79KiDAcuLEurcv6IIpSEXwQX41sXb3aYExKk22W0e_uBWlhs4PmXnK_-3H_O9DMfACNaa7MPivSypHnV6EJPr0I3gR9hG-ppaDvZDK5QTZHVkKVb6002uMRQobQ_NSf0JEQiQVtpZM76eoWR7cHotINqJgI6qS1W1ivCkiVKwQljXd4XwIPLpHevTxNS79r3F34dxVnp-NWmGOgLdISYlJB5pqWszM8PMOjfs7791tXK_Dp-KvMF8QXSfJwPZtd5VIp3yTL-_BYZcPVcLgaDVb58Ft50KmLyNfxlP2b-qLNL1lYu_0
 -->
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contribution](#contribution)
+- [License)[#license)
+
 
 ## Sensitivity 
 ### Overview
