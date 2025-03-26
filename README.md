@@ -42,9 +42,39 @@ To install this project, run the following command
 Provide examples of how to install and use the project 
 
 ## Structure 
+Folders: 
+- [perfusion](#perfusion)
+- [oxygen](#oxygen)
+- [sensitivity](#sensitivity)
+- [tissue_health](#tissue_health)
 
-## Sensitivity 
-### Overview
+Files: 
+| Function | Description | 
+|----------|----------|
+| .dockerignore | |
+| .gitignore | |
+| .gitlab-ci.vml | |
+| API.py | |
+| Dockerfile | |
+| LICENSE | |
+| README.md | |
+| VP_mesh_prep.py | |
+| brain_meshes.tar.xz | |
+| build_and_run_docker_image_sh | |
+| cleaner.sh | |
+| coupled_perfusion_runner.sh | |
+| documentation.pdf | | 
+| documentation.tex | | 
+| perfusion_runner.sh | |
+| perfusion_runner_mod_geom.sh | | 
+| requirements.txt | It is the version requirements for each library. |
+| runner.py | |
+| singularity.def | |
+| test_patient.yml | |
+
+
+### Sensitivity 
+#### Overview
 - [IO_fcts.py](### IO_fcts.py): ...
 - clear.sh
 - [comp_infearcted_volume.py](### comp_infarcted_volume.py): ...
