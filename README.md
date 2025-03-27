@@ -121,14 +121,16 @@ Files:
 Notes: suppl_fcts.py, can be added in the files IO_fcts.py
 
 ### oxygen
-- API.py
-- FE_solver.py
-- IO_funcs.py
-- README.md: instruction for running this section
-- config_oxygen_solver.yaml
-- depth_func_DG.h5
-- oxygen_main.py
-- to_be_implemented.txt
+| Function | Description |
+|----------|----------|
+| API.py | |
+| FE_solver.py | |
+| IO_funcs.py | |
+| README.md | instruction for running this section |
+| config_oxygen_solver.yaml | |
+| depth_func_DG.h5 | |
+| oxygen_main.py | |
+| to_be_implemented.txt | It is a list for the next action |
 
 ### tissue_health
 Folder: beta_versions: A folders with the original files of the GEMINI-DTH repository
@@ -136,7 +138,7 @@ Folder: beta_versions: A folders with the original files of the GEMINI-DTH repos
 Files:
 | Function | Description |
 |----------|----------|
-| API.py| |
+| API.py| Create a class named API |
 | IO_fcts.py | Defining functions |
 | README.md | Explaning the infract treatment |
 | config_propagation.yaml | Configuration by default of the propagation (RMCAo)|
@@ -148,7 +150,7 @@ Files:
 | suppl_fcts.py | Defining functions |
 | tissue_damage.sh | Running the `infarct_estimate_treatment.py` |
 | tissue_health_propagation.py | Estimate the infract volume using a tissue health model with vulnerability propagation |
-| to_be_implemented.txt | It is a list for the next action|
+| to_be_implemented.txt | It is a list for the next action |
 
 Notes: 
 - suppl_fcts.py, can be added in the files IO_fcts.py
