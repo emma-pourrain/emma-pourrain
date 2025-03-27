@@ -20,6 +20,9 @@ To install this project, run the following command
 Provide examples of how to install and use the project 
 
 ## Usage
+### Run the 3D blood flow solver
+1. Extract brain_meshes.tar.xz placed in the main repository
+2. Compute the permeability tensor ...
 ### FEniCS--->FEniCSx
 FEniCS Documentation: https://olddocs.fenicsproject.org/dolfin/2017.1.0/python/py-modindex.html
 FEniCSx Documentation: https://docs.fenicsproject.org/dolfinx/main/python/api.html#python
@@ -77,6 +80,7 @@ Folders:
 - boundary_data: ...
 - config_examples: ...
 - verification: ...
+  
 Files:
 - [API.py](#API.py): ...
 - [BC_creator.py](#BC_creator.py): ...
@@ -173,7 +177,7 @@ Class: dict2obj(dict)
 -> function: _init_ 
 
 ### comp_infarcted_volume.py
->Description: 
+Description: 
 
 ### finite_element_fcts.py
 | Function | Input | Output | Description | 
