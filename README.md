@@ -45,9 +45,10 @@ Folders:
 Files: 
 | Function | Description | 
 |----------|----------|
-| .dockerignore | |
-| .gitignore | |
-| .gitlab-ci.vml | |
+| .dockerignore | Specifies files and directories thaat should be ignored when building a Docker image. |
+| .gitignore | Lists files and directories that Git should ignore in a repository. |
+| .gitlab-ci.vml | Specifies automated tasks that GitLab should execute whe, changes are pushed. |
+| .gitmodules | Contains configuration for Git submodules, which are repositories nested within another repository (in our case, in-silico-trial.git) |
 | API.py | |
 | Dockerfile | |
 | LICENSE | |
@@ -66,9 +67,77 @@ Files:
 | singularity.def | |
 | test_patient.yml | |
 
+Notes: 
+- instead of different files of API, gather together in one and only file
+- the same can be done for IO_fcts, finite_element_fcts and documentation/README
+- Replace some functions in IO_fcts with functions in dolfinx.io 
 
-### Sensitivity 
-#### Overview
+### perfusion
+Folders: 
+- boundary_data: ...
+- config_examples: ...
+- verification: ...
+Files:
+- [API.py](#API.py): ...
+- [BC_creator.py](#BC_creator.py): ...
+- [BC_template_LMCAo.csv](#BC_template_LMCAo.csv): ...
+- [BC_template_RMCAo.csv](#BC_template_RMCAo.csv): ...
+- [IO_fcts.py](#IO_fcts.py): ...
+- [Perfusion_yamls.zip](#Perfusion_yaml.zip): ...
+- [README.md](#README.md): ...
+- [basic_flow_solver.py](#basic_flow_solver.py):...
+- [config_basic_flow_solver.yaml](#config_basic_flow_solver.yaml):...
+- [config_basic_flow_solver_LMCAo.yaml](#config_basic_flow_solver_LMCAo.yaml): ...
+- [config_basic_flow_solver_RMCAo.yaml](#config_basic_flow_solver_RMCAo.yaml): ...
+- [config_coupled_flow_solver.xml](#config_coupled_flow_solver.xml):...
+- [config_permeability_initialiser.yaml](#config_permeability_initialiser.yaml): ...
+- [convert_msh2hdf5.py](#convert_msh2hdf5.py):...
+- [convert_res2img.py](#convert_res2img.py): ...
+- [coupled_flow_solver.py](#coupled_flow_solver.py): ..
+- description.tex
+- finite_element_fcts.py
+- infarct_calculation.py
+- infarct_calculation_thresholds.py
+- lesion_comp_from_img.py
+- new_basic_flow_solver.py
+- new_permeability_initialiser.py
+- opt_res_plotter.py
+- parameter_calculation.py
+- parameter_optimiser.py
+- permeability_initialiser.py
+- suppl_fcts.py
+
+Notes: suppl_fcts.py, can be added in the files IO_fcts.py
+
+### oxygen
+- API.py
+- FE_solver.py
+- IO_funcs.py
+- README.md: instruction for running this section
+- config_oxygen_solver.yaml
+- depth_func_DG.h5
+- oxygen_main.py
+- to_be_implemented.txt
+
+### tissue_health
+- beta_versions
+- API.py
+- IO_fcts.py
+- README.md
+- config_propagation.yaml
+- config_propagation_LMCAo.yaml
+- config_tissue_damage.yaml
+- finite_element_fcts.py
+- infarct_estimate_treatment.py
+- infarct_estimate_treatment_FEM.py
+- suppl_fcts.py
+- tissue_damage.sh
+- tissue_health_propagation.py
+- to_be_implemented.txt
+
+Notes: suppl_fcts.py, can be added in the files IO_fcts.py
+
+### sensitivity 
 - [IO_fcts.py](#IO_fcts.py): ...
 - clear.sh
 - [comp_infearcted_volume.py](#comp_infarcted_volume.py): ...
@@ -79,6 +148,12 @@ Files:
 - [plot_sensitivity_results.py](#plot_sensitivity_results.py): ...
 - sensitivity.sh
 - [suppl_fcts.py](#suppl_fcts.py): ...
+
+Notes: suppl_fcts.py, can be added in the files IO_fcts.py
+
+
+------------------------------------------------------------------------------------------------
+
 ### IO_fcts.py
 |Function|Input | Output | Description | 
 |----------|----------|----------|----------|
@@ -110,14 +185,14 @@ Class: dict2obj(dict)
 | solve_lin_sys | Vp, LHs, RHS, BCs, lin_solver, precond, rtcol, mon_cinv, init_sol | p | |
 
 ### infarct_calulation.py
->Description: ....
+Description: ....
 
 ### param_mapping_runner.py
->Description: ...
+Description: ...
 ### perfusion_parameter_sampling.py
->Description: ...
+Description: ...
 ### plot_sensitivity_results.py
->Description: ...
+Description: ...
 ### suppl_fcts.py
 | Function | Input | Output | Description | 
 |----------|----------|----------|----------|
