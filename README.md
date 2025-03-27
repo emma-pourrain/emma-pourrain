@@ -19,6 +19,22 @@ This section should provude a high-level overview of the project's purpose and g
 To install this project, run the following command
 Provide examples of how to install and use the project 
 
+## Usage
+### FEniCS--->FEniCSx
+FEniCS Documentation: https://olddocs.fenicsproject.org/dolfin/2017.1.0/python/py-modindex.html
+FEniCSx Documentation: https://docs.fenicsproject.org/dolfinx/main/python/api.html#python
+
+### GitHub
+To update github:
+>git status <br>
+>git add . <br>
+>git status <br>
+>git commit -m "description of change" <br>
+>git push origin <br>
+
+To clone a repositry: 
+>git clone -b branch-name url
+
 ## Structure 
 Folders: 
 - [perfusion](#perfusion)
