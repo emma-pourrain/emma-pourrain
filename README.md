@@ -6,7 +6,7 @@ The primary solution strategy is the finite element method. The open source soft
 
 This repository contains software corresponding to WP5 of the INSIST project (https://www.insist-h2020.eu/).
 ## Overview
-This section should provude a high-level overview of the project's purpose and goals
+This section should provide a high-level overview of the project's purpose and goals
 
 ## Table of Contents
 - [Installation](#installation)
@@ -19,6 +19,14 @@ This section should provude a high-level overview of the project's purpose and g
 To install this project, run the following command
 Provide examples of how to install and use the project 
 
+Accessing FEniCSx on Cresent: 
+`module use /apps2/modules/all
+module load CONDA/FEniCSx-0.9
+python3
+import dolfinx
+dolfinx.__version__
+exit()`
+
 ## Usage
 ### Run the 3D blood flow solver
 1. Extract `brain_meshes.tar.xz` placed in the main repository
@@ -28,7 +36,12 @@ Provide examples of how to install and use the project
 
 In the *.csv summarising the boundary conditions the cortical surface regions are numbered so that 21 - left ACA 22 - left MCA 23 - left PCA 24 - right ACA 25 - right MCA 26 - right PCA
 
-To use the BC_template.csv, the config file has to be edited as shown in the config_basic_flow_solver_RMCAo.yaml file.
+To use the `BC_template.csv`, the config file has to be edited as shown in the `config_basic_flow_solver_RMCAo.yaml` file.
+
+To run the 3D oxygen solver:
+1. Follow instructions to run the 3D blood flow solver (`perfusion_runner.sh`) to obtain the inputs for the oxygen model.
+2. Compute oxygen concentration distriution with `oxygen_main.py`. For parallel execution, use `mpirun -n #number_of_processors python3 oxygen_mmain.py`. Using 6 cores and first order finite elements, the execution is slighly over 2 minutes.
+Notes: there are still some numerical instability in the results. To visualise the results set data range to 0-0.2 in paraview. 
 
 ### FEniCS--->FEniCSx
 FEniCS Documentation: https://olddocs.fenicsproject.org/dolfin/2017.1.0/python/py-modindex.html
@@ -80,7 +93,9 @@ Files:
 Notes: 
 - instead of different files of API, gather together in one and only file
 - the same can be done for IO_fcts, finite_element_fcts and documentation/README
-- Replace some functions in IO_fcts with functions in dolfinx.io 
+- Replace some functions in IO_fcts with functions in dolfinx.io
+- create a class parameters with the parameters private and functions to get the parameters
+  => good idea? do parameters change constansly?
 
 ### perfusion
 Folders: 
@@ -123,13 +138,13 @@ Notes: suppl_fcts.py, can be added in the files IO_fcts.py
 ### oxygen
 | Function | Description |
 |----------|----------|
-| API.py | |
+| API.py | Create a class named API |
 | FE_solver.py | |
-| IO_funcs.py | |
+| IO_funcs.py | Defining functions |
 | README.md | instruction for running this section |
-| config_oxygen_solver.yaml | |
+| config_oxygen_solver.yaml | Configuration of input/ouput and parameters |
 | depth_func_DG.h5 | |
-| oxygen_main.py | |
+| oxygen_main.py | Multi-compartment advection-reaction-diffusion problem describing oxygen transport in the brain |
 | to_be_implemented.txt | It is a list for the next action |
 
 ### tissue_health
@@ -160,6 +175,25 @@ Notes:
 - Idea: create a class named FEM where all the functions implemented are for finite elements. Is there already some functions already implemented in labraries of FEniCSx ???
 
 ### sensitivity 
+| Function | Description |
+|----------|----------|
+|IO_fcts.py | Defining functions |
+| clear.sh | Shell commands to remove specific files and directories  |
+| comp_infarcted_volume.py | Analyse perfusion changes in brain tissue due to an occlusion, compares healthy to RMCA. Insight into how much brain tissue is at risk due to the occlussion |
+| finite_element_fcts.py |
+| infarct_calculation.py | Multi-compartement Darcy flow model with mixed Dirichlet and Neumann boundary conditions |
+| param_mapping_runner.py | Run multiple simulations with different configurations |
+| perfusion_parameter_sampling.py | Generates YAML configuration files for a sensitivity analysis by varying two permeability parameters in each part of the brain for gray matter |
+| plot_sensitivity_results.py | Analyse and visualise the sensitivity of infarct volume to permeability parameters |
+| sensitivity.sh | Automates the entire sensitivity analysis workflow for a multi-compartment Darcy flow model |
+| suppl_fcts.py | Defining functions |
+
+Notes: 
+- suppl_fcts.py, can be added in the files IO_fcts.py
+- `comp_infarcted_volume.py`and `infarct_calculation.py` are kinda the same scripts but the method is different ; calculating the infarct volume 
+
+
+------------------------------------------------------------------------------------------------
 - [IO_fcts.py](#IO_fcts.py): ...
 - clear.sh
 - [comp_infearcted_volume.py](#comp_infarcted_volume.py): ...
@@ -171,10 +205,6 @@ Notes:
 - sensitivity.sh
 - [suppl_fcts.py](#suppl_fcts.py): ...
 
-Notes: suppl_fcts.py, can be added in the files IO_fcts.py
-
-
-------------------------------------------------------------------------------------------------
 
 ### IO_fcts.py
 |Function|Input | Output | Description | 
