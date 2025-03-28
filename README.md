@@ -19,13 +19,13 @@ This section should provide a high-level overview of the project's purpose and g
 To install this project, run the following command
 Provide examples of how to install and use the project 
 
-Accessing FEniCSx on Cresent: 
-`module use /apps2/modules/all
-module load CONDA/FEniCSx-0.9
-python3
-import dolfinx
-dolfinx.__version__
-exit()`
+Accessing FEniCSx on Cresent: <br>
+`module use /apps2/modules/all <br>
+module load CONDA/FEniCSx-0.9 <br>
+python3 <br>
+import dolfinx <br>
+dolfinx.__version__ <br>
+exit()` 
 
 ## Usage
 ### Run the 3D blood flow solver
