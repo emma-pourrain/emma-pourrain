@@ -20,12 +20,12 @@ To install this project, run the following command
 Provide examples of how to install and use the project 
 
 Accessing FEniCSx on Cresent: <br>
-`module use /apps2/modules/all <br>
-module load CONDA/FEniCSx-0.9 <br>
-python3 <br>
-import dolfinx <br>
-dolfinx.__version__ <br>
-exit()` 
+>module use /apps2/modules/all <br>
+>module load CONDA/FEniCSx-0.9 <br>
+>python3 <br>
+>import dolfinx <br>
+>`dolfinx.__version__`  <br>
+>exit()
 
 ## Usage
 ### Run the 3D blood flow solver
@@ -104,36 +104,40 @@ Folders:
 - verification: ...
   
 Files:
-- [API.py](#API.py): ...
-- [BC_creator.py](#BC_creator.py): ...
-- [BC_template_LMCAo.csv](#BC_template_LMCAo.csv): ...
-- [BC_template_RMCAo.csv](#BC_template_RMCAo.csv): ...
-- [IO_fcts.py](#IO_fcts.py): ...
-- [Perfusion_yamls.zip](#Perfusion_yaml.zip): ...
-- [README.md](#README.md): ...
-- [basic_flow_solver.py](#basic_flow_solver.py):...
-- [config_basic_flow_solver.yaml](#config_basic_flow_solver.yaml):...
-- [config_basic_flow_solver_LMCAo.yaml](#config_basic_flow_solver_LMCAo.yaml): ...
-- [config_basic_flow_solver_RMCAo.yaml](#config_basic_flow_solver_RMCAo.yaml): ...
-- [config_coupled_flow_solver.xml](#config_coupled_flow_solver.xml):...
-- [config_permeability_initialiser.yaml](#config_permeability_initialiser.yaml): ...
-- [convert_msh2hdf5.py](#convert_msh2hdf5.py):...
-- [convert_res2img.py](#convert_res2img.py): ...
-- [coupled_flow_solver.py](#coupled_flow_solver.py): ..
-- description.tex
-- finite_element_fcts.py
-- infarct_calculation.py
-- infarct_calculation_thresholds.py
-- lesion_comp_from_img.py
-- new_basic_flow_solver.py
-- new_permeability_initialiser.py
-- opt_res_plotter.py
-- parameter_calculation.py
-- parameter_optimiser.py
-- permeability_initialiser.py
-- suppl_fcts.py
+| Function | Description | 
+|----------|----------|
+| API.py | |
+| BC_creator.py | Reads the brain mesh and creates boundary conditions by distributing the average volumetric flow rate of blood to the brain on the boundaries based on their surface area. |
+| BC_template_LMCAo.csv | |
+| BC_template_RMCAo.csv | |
+| IO_fcts.py | Functions for reading and processing mesh and configuration files used in a Darcy flow simulation. It includes utilities for handling XML and YAML input, reading permeability data, and saving results in various formats.|
+| Perfusion_yamls.zip | |
+| README.md| |
+| basic_flow_solver.py | Multi-compartment Darcy flow model with mixed Dirichlet and Neumann boundary conditions. |
+| config_basic_flow_solver.yaml | |
+| config_basic_flow_solver_LMCAo.yaml | |
+| config_basic_flow_solver_RMCAo.yaml | |
+| config_coupled_flow_solver.xml | | 
+| config_permeability_initialiser.yaml | |
+| convert_msh2hdf5.py | |
+| convert_res2img.py | |
+| coupled_flow_solver.py | |
+| description.tex | |
+| finite_element_fcts.py | |
+| infarct_calculation.py | Multi-compartment Darcy flow model with mixed Dirichlet and Neumann boundary conditions |
+| infarct_calculation_thresholds.py | Multi-compartment Darcy flow model with mixed Dirichlet and Neumann boundary conditions|
+| lesion_comp_from_img.py | |
+| new_basic_flow_solver.py | |
+| new_permeability_initialiser.py | ?The same as `permeability_initialiser.py` but with FEniCSx |
+| opt_res_plotter.py | |
+| parameter_calculation.py | |
+| parameter_optimiser.py | |
+| permeability_initialiser.py | Generates an anisotropic permeability field based on a predefined form of the permeability tensor given in a reference coordinate system.  |
+| suppl_fcts.py | |
 
-Notes: suppl_fcts.py, can be added in the files IO_fcts.py
+Notes: 
+- suppl_fcts.py, can be added in the files IO_fcts.py
+- what is the difference between `infarct_calculation.py`and `infarct_calculation_thresholds` ?
 
 ### oxygen
 | Function | Description |
@@ -194,17 +198,6 @@ Notes:
 
 
 ------------------------------------------------------------------------------------------------
-- [IO_fcts.py](#IO_fcts.py): ...
-- clear.sh
-- [comp_infearcted_volume.py](#comp_infarcted_volume.py): ...
-- [finite_element_fcts.py](#finite_element_fcts.py): ...
-- [infarct_calculation.py](#infarct_calulation.py): ...
-- [param_mapping_runner.py](#param_mapping_runner.py): ...
-- [perfusion_parameter_sampling.py](#perfusion_parameter_sampling.py): ...
-- [plot_sensitivity_results.py](#plot_sensitivity_results.py): ...
-- sensitivity.sh
-- [suppl_fcts.py](#suppl_fcts.py): ...
-
 
 ### IO_fcts.py
 |Function|Input | Output | Description | 
