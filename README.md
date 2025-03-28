@@ -1,12 +1,10 @@
 # Biomedicalfluid dynamics with a particular focus on cerebral blood flow - Gemini code
-Here is a brief description of the project 
-
 The following is a useful reference document for users of the code in project Gemini. This is a project looking to model the various scenarios of acute ischaemic stroke in a virtual population of patients, with the overarching goal of running an ’in silico’ or ’virtual’ clinical trial, which will be eventually accessible to medical professionals.
-The primary solution strategy is the finite element method. The open source software FEniCSx is used as a convenient and effective finite element solver for the partial differential equations modelling acute ischaemic stroke. At time of writing the latest version of FEniCSx is from October 2024, that is FEniCSx (0.9). FEniCSx is an evolution of the previous version FEniCS Legacy - this document will describe some aspects of this translation. FEniCSx is comprised of the libraries UFL, Basix, FFCx, and DOLFINx, which are also available on Github. Some improvements on the legacy version include a wide range of available cell types and elements, memory parallelisation, and complex number support.
+
+## Overview
+This project uses the finite element method (FEM) as the primary solution strategy for modeling acute ischemic stroke. To achieve this, we utilise FEniCSx, an open-source finite element solver for partial differential equations. <br> As of October 2024, the latest version of FEniCSx is 0.9, which reprensents an evolution from its predecessor, FEniCS legacy. This document outlines key aspects of the transition between these versions. <br> FEniCSx consists of several core libraries, including UFL, Basix, FFCx and DOLFINx, all of which are available on GitHub. Compared to the legacy version, FEniCSx introduces several improvements, such as expanded support for various cell types and elements, enhanced memory parallelization and complex number support. <br> These advancements make FEniCSx a powerful and efficient tool for simulating ischemic stroke dynamics.
 
 This repository contains software corresponding to WP5 of the INSIST project (https://www.insist-h2020.eu/).
-## Overview
-This section should provide a high-level overview of the project's purpose and goals
 
 ## Table of Contents
 - [Installation](#installation)
