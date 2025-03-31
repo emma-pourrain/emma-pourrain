@@ -14,16 +14,34 @@ This repository contains software corresponding to WP5 of the INSIST project (ht
 - [License](#license)
 
 ## Installation
-To install this project, run the following command
-Provide examples of how to install and use the project 
+Setting up the environment:
 
 Accessing FEniCSx on Cresent: <br>
->module use /apps2/modules/all <br>
->module load CONDA/FEniCSx-0.9 <br>
->python3 <br>
->import dolfinx <br>
->`dolfinx.__version__`  <br>
->exit()
+```
+module use /apps2/modules/all
+module load CONDA/FEniCSx-0.9 
+python3 
+import dolfinx
+dolfinx.__version__
+exit()
+```
+Accessing FEniCS Legacy on Cresent: <br>
+```
+module use /apps2/modules/all
+module load CONDA/FEniCS-Legacy 
+python3 
+import dolfin
+dolfin.__version__
+exit()
+```
+
+To create your own environment:
+```
+conda create -n namelocalenvironment python=3.8
+conda activate namelocalenvironment
+conda install 'library_name'
+```
+
 
 ## Usage
 ### Run the 3D blood flow solver
@@ -47,14 +65,17 @@ FEniCSx Documentation: https://docs.fenicsproject.org/dolfinx/main/python/api.ht
 
 ### GitHub
 To update github:
->git status <br>
->git add . <br>
->git status <br>
->git commit -m "description of change" <br>
->git push origin <br>
-
+```
+git status 
+git add . 
+git status 
+git commit -m "description of change" 
+git push origin
+```
 To clone a repositry: 
->git clone -b branch-name url
+```
+git clone -b branch-name url
+```
 
 ## Structure 
 Folders: 
